@@ -4,7 +4,6 @@
 
 ```c#
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <FullName>Mert Koprucu</FullName>
   </PropertyGroup>
@@ -12,7 +11,6 @@
   <Target Name="GiveFullName">
     <Message Text="$(FullName)" />
   </Target>
-
 </Project>
 ```
 
@@ -51,10 +49,12 @@ Vectorial values can be shown using character `@`.
 
 `.csproj side`
 
+You should compile the project before using task with msbuild.
+
 ```c#
   <UsingTask TaskName="VeryUsefulTask" AssemblyFile="bin\Debug\net5.0\msbuildtest.dll"/>
 
-    <Target Name="FirstTask" AfterTargets="AfterBuild">
+  <Target Name="FirstTask" AfterTargets="AfterBuild">
     <VeryUsefulTask Name="Mert" />
   </Target>
 ```
@@ -72,6 +72,4 @@ public class VeryUsefulTask : Microsoft.Build.Utilities.Task
             return true;
         }
     }
-
 ```
-
