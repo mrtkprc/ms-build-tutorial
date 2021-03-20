@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <UsingTask TaskName="VeryUsefulTask" AssemblyFile="bin\Debug\net5.0\msbuildtest.dll"/>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <OwnerName>Mert</OwnerName>
+    <OwnerSurname>Koprucu </OwnerSurname>
+    <OwnerFullName>$(OwnerName) $(OwnerSurname)</OwnerFullName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" />
+  </ItemGroup>
+
+  <Target Name="FirstTask" AfterTargets="AfterBuild">
+    <VeryUsefulTask Name="Mert" />
+  </Target>
+
+</Project>
