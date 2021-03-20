@@ -23,10 +23,10 @@ To Build Target
 Property is like a scalar value. On the other hand, property is such as vectorial value.    
 
 ```c#
-  <ItemGroup>
-    <CompilingFiles Include="src/*.cs" />
-    <CompilingFiles Remove="src/Tar.cs" />
-  </ItemGroup>
+<ItemGroup>
+  <CompilingFiles Include="src/*.cs" />
+  <CompilingFiles Remove="src/Tar.cs" />
+</ItemGroup>
 ```
 
 ```c#
@@ -62,14 +62,14 @@ You should compile the project before using task with msbuild.
 `Task implementation side`
 ```c#
 public class VeryUsefulTask : Microsoft.Build.Utilities.Task
+{
+    [Required]
+    public string Name { get; set; }
+    
+    public override bool Execute()
     {
-        [Required]
-        public string Name { get; set; }
-        
-        public override bool Execute()
-        {
-            Log.LogMessage($"You Provide for Property Name: {Name}");
-            return true;
-        }
+        Log.LogMessage($"You Provide for Property Name: {Name}");
+        return true;
     }
+}
 ```
