@@ -30,9 +30,9 @@ Property is like a scalar value. On the other hand, property is such as vectoria
 ```
 
 ```c#
-  <Target Name="CompilingAllFiles">
-    <Message Text="@(CompilingFiles)" />
-  </Target>
+<Target Name="CompilingAllFiles">
+  <Message Text="@(CompilingFiles)" />
+</Target>
 ```
 
 Vectorial values can be shown using character `@`.
@@ -40,9 +40,9 @@ Vectorial values can be shown using character `@`.
 ## To add reference into project
 
 ```c#
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" />
-  </ItemGroup>
+<ItemGroup>
+  <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" />
+</ItemGroup>
 ```
 
 ## Using Task:
@@ -52,11 +52,11 @@ Vectorial values can be shown using character `@`.
 You should compile the project before using task with msbuild.
 
 ```c#
-  <UsingTask TaskName="VeryUsefulTask" AssemblyFile="bin\Debug\net5.0\msbuildtest.dll"/>
+<UsingTask TaskName="VeryUsefulTask" AssemblyFile="bin\Debug\net5.0\msbuildtest.dll"/>
 
-  <Target Name="FirstTask" AfterTargets="AfterBuild">
-    <VeryUsefulTask Name="Mert" />
-  </Target>
+<Target Name="FirstTask" AfterTargets="AfterBuild">
+  <VeryUsefulTask Name="Mert" />
+</Target>
 ```
 
 `Task implementation side`
